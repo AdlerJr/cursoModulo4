@@ -1,0 +1,120 @@
+/* Reset some default styles */
+body, h1, p, ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Visibilidade do link "Skip to Main Content" apenas ao foco */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: -999px;
+}
+
+.skip-link:focus {
+  left: 0;
+  top: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+/* Estilização da barra de navegação */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #444;
+  padding: 10px;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ff6600; /* Transição de cor */
+}
+
+/* Estilo das imagens com modelo de caixa */
+.styled-image {
+  border: 2px solid #ddd;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/* Grid para a página de galeria */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* Estilos para o hover */
+.image-grid img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Estilos avançados usando nth-child */
+.image-grid img:nth-child(odd) {
+  border-radius: 15px;
+}
+
+.image-grid img:nth-child(even) {
+  border-radius: 30px;
+}
+.styled-image,
+.image-grid img {
+  max-width: 100%; /* Ajusta a largura máxima a 100% do contêiner pai */
+  height: auto; /* Mantém a proporção da imagem */
+}
+.styled-image,
+.image-grid img {
+  margin: 10px; /* Adiciona espaçamento ao redor das imagens */
+}
+.styled-image {
+  display: block; /* Necessário para centralização */
+  margin-left: auto;
+  margin-right: auto;
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta automaticamente o número de colunas */
+  gap: 10px;
+}
+body {
+  overflow-x: hidden; /* Remove a rolagem horizontal */
+}
+
+/* Ajuste para imagens e conteúdo */
+.styled-image,
+.image-grid img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Remove espaços adicionais ao redor das imagens */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar {
+  max-width: 100%;
+  overflow-x: hidden; /* Impede que a barra de navegação crie rolagem horizontal */
+}
+
+main {
+  max-width: 100%;
+  overflow-x: hidden; /* Garante que o conteúdo principal não exceda a largura da viewport */
+}
